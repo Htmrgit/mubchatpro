@@ -1,7 +1,10 @@
 (function() {
     // 1. Configuration
     const API_URL = "https://script.google.com/macros/s/AKfycbyS5Ow_FZMgsluQUDKiYf2Nzz9odewnSj-U2zQfAmVT7c84HO2FpL1KQ2dZJBim6d6mSg/exec";
-    const siteID = document.currentScript.dataset.site || "unknown";
+    const siteID = document.currentScript.dataset.site || "Business";
+    
+    // Capitalize site name for header display
+    const displaySiteName = siteID.charAt(0).toUpperCase() + siteID.slice(1);
     
     let userName = "";
     let userPhone = "";
@@ -17,8 +20,8 @@
         <div id="mub-chat-window">
             <div id="mub-chat-header">
                 <div class="mub-header-info">
-                    <strong>MuBChatPro</strong>
-                    <span>Powered by MarketingUB</span>
+                    <strong>${displaySiteName} Support</strong>
+                    <span id="mub-online-status">Online</span>
                 </div>
                 <button id="mub-close">&times;</button>
             </div>
@@ -30,6 +33,9 @@
                 <button id="mub-send-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
+            </div>
+            <div id="mub-footer-branding">
+                MuBChatPro <span>Powered by MarketingUB</span>
             </div>
         </div>
     `;
@@ -81,12 +87,11 @@
         if (chatStep === "ask_phone") {
             userPhone = text.toLowerCase() === "skip" ? "Not Provided" : text;
             chatStep = "active_chat";
-            addMessage("Thank you! How can I help you today?", "bot");
-            showPopularQuestions(["What is the price?", "How to install?", "Main features"]);
+            addMessage(`Thank you ${userName}! How can I help you with ${displaySiteName} today?`, "bot");
+            showPopularQuestions(["Pricing details?", "Business hours?", "Location?"]);
             return;
         }
 
-        // Logic for FAQ and AI
         typingIndicator.style.display = "block";
         try {
             const response = await fetch(API_URL, {
@@ -100,10 +105,10 @@
             });
             const data = await response.json();
             typingIndicator.style.display = "none";
-            addMessage(data.reply || "I'm not sure about that yet, but we will get back to you shortly.", "bot");
+            addMessage(data.reply || "I'll check on that for you. Someone from the team will get back to you soon!", "bot");
         } catch (err) {
             typingIndicator.style.display = "none";
-            addMessage("There was an error connecting to the server.", "bot");
+            addMessage("There was an error connecting to the server.", "error");
         }
     }
 
@@ -111,7 +116,7 @@
     chatBtn.onclick = () => {
         chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
         if (messagesArea.innerHTML === "") {
-            addMessage("Welcome to MuBChatPro! What is your name?", "bot");
+            addMessage(`Hi! Welcome to ${displaySiteName}. What is your name?`, "bot");
         }
     };
 

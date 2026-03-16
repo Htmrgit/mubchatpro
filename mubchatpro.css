@@ -1,118 +1,52 @@
-/* MuBChatPro Glassmorphism Style - English Version */
-#mub-chat-wrapper {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 999999;
-    font-family: 'Inter', sans-serif;
-}
+/* MuBChatPro Premium UI */
+#mub-chat-wrapper { position: fixed; bottom: 30px; right: 30px; z-index: 999999; font-family: 'Inter', sans-serif; }
 
-#mub-chat-btn {
-    width: 60px;
-    height: 60px;
-    background: #6366f1;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-    transition: transform 0.3s;
+#mub-chat-btn { 
+    width: 60px; height: 60px; background: #6366f1; color: white; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; cursor: pointer; 
+    box-shadow: 0 10px 30px rgba(99,102,241,0.4); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
-
 #mub-chat-btn:hover { transform: scale(1.1); }
 
-#mub-chat-window {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 350px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    animation: mubFade 0.3s ease-out;
+#mub-chat-window { 
+    position: absolute; bottom: 80px; right: 0; width: 360px; height: 550px; 
+    background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+    border: 1px solid rgba(255,255,255,0.4); border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); 
+    display: none; flex-direction: column; overflow: hidden; animation: mubSlide 0.4s ease-out; 
 }
 
-@keyframes mubFade {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes mubSlide { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+#mub-chat-header { background: #6366f1; color: white; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
+.mub-info strong { display: block; font-size: 1.1rem; }
+#mub-status { font-size: 0.75rem; opacity: 0.8; display: flex; align-items: center; gap: 6px; }
+#mub-status::before { content: ""; width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #4ade80; }
+
+#mub-close-btn { background: none; border: none; color: white; font-size: 30px; cursor: pointer; opacity: 0.7; }
+
+#mub-messages-container { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.mub-chat-bubble { padding: 12px 18px; border-radius: 18px; max-width: 85%; font-size: 0.95rem; line-height: 1.5; }
+.mub-type-bot { background: white; color: #1e293b; align-self: flex-start; border-bottom-left-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.mub-type-user { background: #6366f1; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+.mub-type-error { background: #fee2e2; color: #b91c1c; align-self: center; font-size: 0.85rem; border-radius: 10px; width: 90%; text-align: center; }
+
+#mub-typing-indicator { padding: 0 20px 10px; font-size: 0.75rem; color: #94a3b8; font-style: italic; }
+
+#mub-queries-suggestions { padding: 0 20px 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+#mub-queries-suggestions button { background: rgba(99,102,241,0.1); border: 1px solid #6366f1; color: #6366f1; padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
+#mub-queries-suggestions button:hover { background: #6366f1; color: white; }
+
+#mub-input-footer { padding: 15px 20px; background: white; display: flex; gap: 12px; border-top: 1px solid #f1f5f9; }
+#mub-input-field { flex: 1; border: 1px solid #e2e8f0; padding: 12px; border-radius: 12px; outline: none; }
+#mub-send-trigger { background: #6366f1; border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+#mub-branding-footer { 
+    text-align: center; padding: 10px; 
+    background: linear-gradient(90deg, #4f46e5, #9333ea); /* Premium Gradient */
+    font-size: 0.75rem; color: white; 
+    border-top: 1px solid rgba(255,255,255,0.2); 
+    font-weight: 500;
 }
+#mub-branding-footer span { font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
-#mub-chat-header {
-    background: #6366f1;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mub-header-info strong { display: block; font-size: 1.1rem; }
-.mub-header-info span { font-size: 0.75rem; opacity: 0.8; }
-
-#mub-close { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-
-#mub-chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.mub-msg {
-    padding: 10px 15px;
-    border-radius: 15px;
-    max-width: 80%;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.mub-msg-bot { background: white; color: #1e293b; align-self: flex-start; border-bottom-left-radius: 2px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.mub-msg-user { background: #6366f1; color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
-
-#mub-typing { padding: 5px 20px; font-size: 0.75rem; color: #64748b; font-style: italic; }
-
-#mub-popular-queries { padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 8px; }
-.mub-pop-btn { background: rgba(99, 102, 241, 0.1); border: 1px solid #6366f1; color: #6366f1; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
-.mub-pop-btn:hover { background: #6366f1; color: white; }
-
-#mub-chat-input-area {
-    padding: 15px;
-    background: white;
-    display: flex;
-    gap: 10px;
-    border-top: 1px solid #f1f5f9;
-}
-
-#mub-user-input {
-    flex: 1;
-    border: 1px solid #e2e8f0;
-    padding: 10px 15px;
-    border-radius: 10px;
-    outline: none;
-}
-
-#mub-send-btn {
-    background: #6366f1;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-@media (max-width: 400px) {
-    #mub-chat-window { width: 90vw; height: 80vh; right: -10px; }
-}
+@media (max-width: 400px) { #mub-chat-window { width: 92vw; height: 75vh; right: -15px; } }

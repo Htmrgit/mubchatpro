@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MuBChatPro | AI Chatbot for Websites</title>
+
+<meta name="description" content="MuBChatPro is a smart AI chatbot that helps businesses answer customer questions and capture leads automatically.">
+
+<link rel="stylesheet" href="mubchatpro.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6fb;
+color:#333;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#111;
+color:#fff;
+}
+
+header h1{
+margin:0;
+font-size:22px;
+}
+
+nav a{
+color:#fff;
+margin-left:18px;
+text-decoration:none;
+font-size:15px;
+}
+
+.hero{
+text-align:center;
+padding:90px 20px;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+max-width:650px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 28px;
+background:#ff7a18;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.how{
+background:#eef2f7;
+text-align:center;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.price-card{
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.price{
+font-size:30px;
+margin:15px 0;
+font-weight:bold;
+}
+
+.contact form{
+max-width:420px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input,textarea{
+padding:12px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px;
+background:black;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.code-box{
+background:#111;
+color:#0f0;
+padding:20px;
+border-radius:6px;
+font-family:monospace;
+overflow:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>MuBChatPro</h1>
+
+<nav>
+<a href="#features">Features</a>
+<a href="#how">How it Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#install">Install</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>AI Chatbot for Your Website</h2>
+
+<p>
+MuBChatPro helps businesses answer customer questions automatically
+and capture leads directly from their website.
+</p>
+
+<a class="btn" href="#install">Get Started</a>
+
+<p style="margin-top:12px;font-size:14px;">
+Powered by MarketingUB
+</p>
+
+</section>
+
+<section id="features" class="section">
+
+<h2>Features</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>AI Chatbot</h3>
+<p>Answer customer questions automatically using AI technology.</p>
+</div>
+
+<div class="card">
+<h3>FAQ Knowledge Base</h3>
+<p>Custom FAQ database for each website.</p>
+</div>
+
+<div class="card">
+<h3>Lead Capture</h3>
+<p>Collect customer name, phone and questions automatically.</p>
+</div>
+
+<div class="card">
+<h3>Multi Website</h3>
+<p>One chatbot script works on unlimited websites.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="how" class="section how">
+
+<h2>How It Works</h2>
+
+<p>
+
+Visitor opens website  
+→ chatbot appears  
+→ user asks question  
+→ FAQ or AI answer  
+→ lead saved in database
+
+</p>
+
+</section>
+
+<section id="pricing" class="section">
+
+<h2>Pricing</h2>
+
+<div class="pricing">
+
+<div class="price-card">
+<h3>Basic</h3>
+<p class="price">₹99</p>
+<p>FAQ chatbot</p>
+</div>
+
+<div class="price-card">
+<h3>Pro</h3>
+<p class="price">₹299</p>
+<p>AI + FAQ chatbot</p>
+</div>
+
+<div class="price-card">
+<h3>Premium</h3>
+<p class="price">₹999</p>
+<p>AI chatbot + CRM + analytics</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="install" class="section">
+
+<h2>Installation</h2>
+
+<p style="text-align:center;">
+Add this code to your website before the <b>&lt;/body&gt;</b> tag.
+</p>
+
+<div class="code-box">
+
+&lt;link rel="stylesheet" href="https://username.github.io/mubchatpro/mubchatpro.css"&gt;
+
+&lt;script  
+src="https://username.github.io/mubchatpro/mubchatpro.js"  
+data-site="mysite"&gt;
+&lt;/script&gt;
+
+</div>
+
+</section>
+
+<section id="contact" class="section contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Phone">
+
+<textarea placeholder="Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+MuBChatPro © 2026  
+Powered by MarketingUB
+</p>
+
+</footer>
+
+<!-- MuBChatPro Chatbot -->
+
+<script
+src="mubchatpro.js"
+data-site="mubchatpro">
+</script>
+
+</body>
+</html>
